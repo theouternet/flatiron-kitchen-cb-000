@@ -12,5 +12,12 @@
   <%= f.label :name %>
   <%= f.text_field :name %><br>
 
+  <%= f.collection_check_boxes :ingredient_ids, @ingredients, :id, :name %><br>
+
+  <%= f.fields_for :ingredients do |i_f| %>
+    <%= i_f.label :name %>
+    <%= i_f.text_field :name %><br>
+  <% end %>
+
   <%= f.submit %>
 <% end %> 
